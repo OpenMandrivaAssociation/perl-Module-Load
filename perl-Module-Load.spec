@@ -15,7 +15,6 @@ Source:         http://www.cpan.org/modules/by-module/Module/%{module}-%{version
 Buildrequires:  perl-devel
 %endif
 Buildarch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 load eliminates the need to know whether you are trying to require either a
