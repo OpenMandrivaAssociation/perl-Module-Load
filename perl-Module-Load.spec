@@ -1,16 +1,16 @@
-%define module  Module-Load
-%define name    perl-%{module}
-%define version 0.16
-%define release %mkrel 1
+%define upstream_name    Module-Load
+%define upstream_version 0.16
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
-Summary:        Runtime require of both modules and files
-License:        GPL or Artistic
-Group:          Development/Perl
-Url:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Module/%{module}-%{version}.tar.bz2
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    Runtime require of both modules and files
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upstream_version}.tar.bz2
+
 %if %{mdkversion} < 1010
 Buildrequires:  perl-devel
 %endif
@@ -34,7 +34,7 @@ file notation fitting the particular platform you are on.
 load elimates the need for this overhead and will just DWYM.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -55,4 +55,3 @@ rm -rf %{buildroot}
 %doc README
 %{perl_vendorlib}/Module
 %{_mandir}/*/*
-
