@@ -1,5 +1,5 @@
 %define upstream_name    Module-Load
-%define upstream_version 0.16
+%define upstream_version 0.18
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -9,7 +9,7 @@ Summary:    Runtime require of both modules and files
 License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:    http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upstream_version}.tar.gz
 
 %if %{mdkversion} < 1010
 Buildrequires:  perl-devel
@@ -41,7 +41,7 @@ load elimates the need for this overhead and will just DWYM.
 %make
 
 %check
-%{__make} test
+%make test
 
 %install
 rm -rf %{buildroot}
