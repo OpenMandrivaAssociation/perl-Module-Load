@@ -1,9 +1,9 @@
 %define upstream_name    Module-Load
-%define upstream_version 0.18
+%define upstream_version 0.22
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 4
+Release:    1
 
 Summary:    Runtime require of both modules and files
 License:    GPL+ or Artistic
@@ -15,7 +15,6 @@ Source0:    http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upst
 Buildrequires:  perl-devel
 %endif
 Buildarch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 load eliminates the need to know whether you are trying to require either a
@@ -44,14 +43,9 @@ load elimates the need for this overhead and will just DWYM.
 %make test
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean 
-rm -rf %{buildroot}
-
 %files 
-%defattr(-,root,root)
 %doc README
 %{perl_vendorlib}/Module
 %{_mandir}/*/*
