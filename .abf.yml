@@ -1,2 +1,4 @@
+removed_sources:
+  Module-Load-0.22.tar.gz: 2961e04d667b8db222165baa89544a8e20adfb5f
 sources:
-  "Module-Load-0.22.tar.gz": 2961e04d667b8db222165baa89544a8e20adfb5f
+  Module-Load-0.24.tar.gz: 7999bf5bc91113659e275a14290174035aeaac31
