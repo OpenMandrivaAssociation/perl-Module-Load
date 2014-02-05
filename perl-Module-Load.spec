@@ -1,14 +1,14 @@
 %define upstream_name    Module-Load
-%define upstream_version 0.24
+%define upstream_version 0.30
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version 0.24
+Version:	%perl_convert_version %{upstream_version}
 Release:	1
 
 Summary:	Runtime require of both modules and files
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Module/Module-Load-0.24.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Module/Module-Load-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildArch:	noarch
@@ -100,5 +100,6 @@ perl Makefile.PL INSTALLDIRS=vendor
 * Sat Sep 15 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.10-3mdv2008.0
 + Revision: 86641
 - rebuild
+
 
 
